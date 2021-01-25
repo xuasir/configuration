@@ -7,8 +7,6 @@ const getAbsoluteRuntimePath = () =>
   path.dirname(require.resolve('@babel/runtime-corejs3/package.json'));
 
 module.exports = function ({
-  ignoreBrowserslistConfig = false,
-  useTransformRuntime = true,
   libMode = false,
   useReact = false,
   useVue = false,
@@ -18,10 +16,13 @@ module.exports = function ({
     {
       // preset env
       targets,
+      ignoreBrowserslistConfig = false,
       modules = 'auto',
       loose = false,
       exclude = [],
       // transform runtime
+      useTransformRuntime = true,
+      absoluteRuntime = true,
       helpers = true,
       useESModules = false,
       absoluteRuntimePath = getAbsoluteRuntimePath(),
@@ -53,6 +54,10 @@ module.exports = function ({
       } else if (vueVersion === 3) {
         v3JSX = true;
       }
+    }
+    // absoluteRuntime
+    if (!absoluteRuntime) {
+      absoluteRuntimePath = false;
     }
 
     return {
