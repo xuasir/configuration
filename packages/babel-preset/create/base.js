@@ -7,7 +7,6 @@ const getAbsoluteRuntimePath = () =>
   path.dirname(require.resolve('@babel/runtime-corejs3/package.json'));
 
 module.exports = function ({
-  targets,
   ignoreBrowserslistConfig = false,
   useTransformRuntime = true,
   libMode = false,
@@ -18,7 +17,7 @@ module.exports = function ({
     _,
     {
       // preset env
-      targets: userTargets,
+      targets,
       modules = 'auto',
       loose = false,
       exclude = [],
@@ -34,7 +33,6 @@ module.exports = function ({
       vueJSX = false,
     } = {}
   ) => {
-    if (!targets) targets = userTargets;
     // vue JSX
     let v2JSX = false,
       v3JSX = false,

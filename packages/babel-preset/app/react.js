@@ -2,4 +2,4 @@
 
 const create = require('../create/base');
 
-module.exports = create({ targets: {}, useReact: true });
+module.exports = create({ useReact: true });

@@ -2,4 +2,4 @@
 
 const create = require('../create/base');
 
-module.exports = create({ targets: {}, useVue: true });
+module.exports = create({ useVue: true });

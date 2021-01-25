@@ -6,7 +6,6 @@ const getAbsoluteRuntimePath = () =>
   path.dirname(require.resolve('@babel/runtime-corejs3/package.json'));
 
 module.exports = function createDeps({
-  targets,
   ignoreBrowserslistConfig = false,
   useTransformRuntime = true,
 } = {}) {
@@ -14,14 +13,13 @@ module.exports = function createDeps({
     _,
     {
       // preset env
-      targets: userTargets,
+      targets,
       modules = 'auto',
       exclude = [],
       // transform runtime
       absoluteRuntimePath = getAbsoluteRuntimePath(),
-    }
+    } = {}
   ) => {
-    if (!targets) targets = userTargets;
     return {
       sourceType: 'unambiguous',
       exclude: /@babel\/runtime/,
