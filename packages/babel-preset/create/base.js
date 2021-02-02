@@ -1,6 +1,7 @@
 'use strict';
 
 const path = require('path');
+const fs = require('fs');
 const semver = require('semver');
 
 const getAbsoluteRuntimePath = () =>
@@ -163,6 +164,21 @@ module.exports = function ({
           presets: [['@babel/preset-env', { targets: { node: 'current' } }]],
         },
       },
+      overrides: [
+        {
+          test: filePath => {
+            if (/\.vue$/.test(filePath)) {
+              const template = fs.readFileSync(filePath, { encoding: 'utf8' });
+              return (
+                template.includes('lang="ts"') || template.includes("lang='ts'")
+              );
+            }
+
+            return false;
+          },
+          plugins: [require('@babel/plugin-transform-typescript')],
+        },
+      ],
     };
   };
 };
