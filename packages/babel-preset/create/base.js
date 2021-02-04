@@ -21,6 +21,7 @@ module.exports = function ({
       modules = 'auto',
       loose = false,
       exclude = [],
+      forceAllTransforms = false,
       // transform runtime
       useTransformRuntime = true,
       absoluteRuntime = true,
@@ -73,6 +74,7 @@ module.exports = function ({
                 ignoreBrowserslistConfig,
                 modules,
                 loose,
+                forceAllTransforms,
               }
             : {
                 targets,
@@ -82,6 +84,7 @@ module.exports = function ({
                 ignoreBrowserslistConfig,
                 modules,
                 loose,
+                forceAllTransforms,
               },
         ],
         useReact && [
