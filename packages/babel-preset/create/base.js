@@ -22,7 +22,7 @@ module.exports = function ({
       loose = false,
       exclude = [],
       forceAllTransforms = false,
-      useBuiltIns = null,
+      usageMode = false,
       // transform runtime
       useTransformRuntime = true,
       absoluteRuntime = true,
@@ -63,6 +63,13 @@ module.exports = function ({
       absoluteRuntimePath = false;
     }
 
+    // builtins
+    let builtins = {};
+    if (usageMode) {
+      builtins.useBuiltIns = 'usage';
+      builtins.corejs = 3;
+    }
+
     return {
       presets: [
         [
@@ -70,22 +77,24 @@ module.exports = function ({
           libMode
             ? {
                 targets,
-                useBuiltIns: useBuiltIns || false,
+                useBuiltIns: false,
                 exclude: ['transform-typeof-symbol'].concat(exclude),
                 ignoreBrowserslistConfig,
                 modules,
                 loose,
                 forceAllTransforms,
+                ...builtins,
               }
             : {
                 targets,
-                useBuiltIns: useBuiltIns || 'entry',
+                useBuiltIns: 'entry',
                 corejs: 3,
                 exclude: ['transform-typeof-symbol'].concat(exclude),
                 ignoreBrowserslistConfig,
                 modules,
                 loose,
                 forceAllTransforms,
+                ...builtins,
               },
         ],
         useReact && [
