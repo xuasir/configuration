@@ -22,6 +22,7 @@ module.exports = function ({
       loose = false,
       exclude = [],
       forceAllTransforms = false,
+      useBuiltIns = null,
       // transform runtime
       useTransformRuntime = true,
       absoluteRuntime = true,
@@ -69,7 +70,7 @@ module.exports = function ({
           libMode
             ? {
                 targets,
-                useBuiltIns: false,
+                useBuiltIns: useBuiltIns || false,
                 exclude: ['transform-typeof-symbol'].concat(exclude),
                 ignoreBrowserslistConfig,
                 modules,
@@ -78,7 +79,7 @@ module.exports = function ({
               }
             : {
                 targets,
-                useBuiltIns: 'entry',
+                useBuiltIns: useBuiltIns || 'entry',
                 corejs: 3,
                 exclude: ['transform-typeof-symbol'].concat(exclude),
                 ignoreBrowserslistConfig,
