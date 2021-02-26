@@ -135,8 +135,7 @@ module.exports = function ({
                 helpers,
                 useESModules,
                 absoluteRuntime: absoluteRuntimePath,
-                version: require.resolve('@babel/runtime-corejs3/package.json')
-                  .version,
+                version: require('@babel/runtime-corejs3/package.json').version,
               }
             : {
                 corejs: false,
@@ -144,8 +143,7 @@ module.exports = function ({
                 helpers,
                 useESModules,
                 absoluteRuntime: absoluteRuntimePath,
-                version: require.resolve('@babel/runtime-corejs3/package.json')
-                  .version,
+                version: require('@babel/runtime-corejs3/package.json').version,
               },
         ],
         v3JSX && [require('@vue/babel-plugin-jsx'), jsxOptions],
