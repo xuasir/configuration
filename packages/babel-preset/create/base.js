@@ -1,5 +1,6 @@
 'use strict';
 
+const resolve = require('resolve');
 const path = require('path');
 const fs = require('fs');
 const semver = require('semver');
@@ -46,9 +47,12 @@ module.exports = function ({
         jsxOptions = vueJSX;
       }
 
-      let vueVersion = 2;
+      let vueVersion = 3;
       try {
-        const Vue = require('vue');
+        const vuePath = process.cwd()
+          ? resolve.sync('vue', { basedir: process.cwd() })
+          : 'vue';
+        const Vue = require(vuePath);
         vueVersion = semver.major(Vue.version);
       } catch (e) {}
 
