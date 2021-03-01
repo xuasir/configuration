@@ -1,6 +1,6 @@
 {
   "name": "@xus/babel-preset",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "a babel preset",
   "keywords": [
     "babel",
@@ -56,7 +56,7 @@
   },
   "peerDependencies": {
     "core-js": "^3",
-    "react": "^16.8.0",
+    "react": ">=16.8.0",
     "vue": "^2 || ^3.0.0-0"
   },
   "peerDependenciesMeta": {
