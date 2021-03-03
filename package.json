@@ -4,11 +4,6 @@
   "workspaces": [
     "packages/*"
   ],
-  "devDependencies": {
-    "eslint": "^7.18.0",
-    "eslint-plugin-prettier": "^3.3.1",
-    "prettier": "^2.2.1"
-  },
   "dependencies": {
     "resolve": "^1.20.0"
   }
