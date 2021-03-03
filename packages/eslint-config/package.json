@@ -1,6 +1,6 @@
 {
   "name": "@xus/eslint-config",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "eslint config",
   "keywords": [
     "eslint",
@@ -9,10 +9,16 @@
   "author": "guo.xu <xuguo@outlook.it>",
   "homepage": "https://github.com/xus-code/configuration#readme",
   "license": "MIT",
-  "main": "lib/index.js",
   "files": [
     "lib"
   ],
+  "exports": {
+    ".": "./lib/base.js",
+    "./": "./lib/base.js",
+    "./react": "./lib/react.js",
+    "./vue3": "./lib/vue3.js",
+    "./prettier": "./lib/prettier.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/xus-code/configuration.git"
@@ -32,6 +38,7 @@
     "@vue/eslint-config-typescript": "^7.0.0",
     "eslint": "^7.21.0",
     "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-jest": "^24.1.5",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
