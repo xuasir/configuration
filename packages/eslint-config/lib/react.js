@@ -19,6 +19,7 @@ module.exports = {
     isTsProject && 'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'prettier',
+    'prettier/react',
     'plugin:prettier/recommended',
   ].filter(Boolean),
   plugins: ['react', 'react-hooks'],

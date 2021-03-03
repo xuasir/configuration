@@ -19,6 +19,7 @@ module.exports = {
     isTsProject && 'plugin:@typescript-eslint/recommended',
     'plugin:vue/vue3-recommended',
     'prettier',
+    'prettier/vue',
     'plugin:prettier/recommended',
   ].filter(Boolean),
   rules: {
