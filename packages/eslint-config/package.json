@@ -1,10 +1,12 @@
 {
   "name": "@xus/eslint-config",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "eslint config",
   "keywords": [
     "eslint",
-    "config"
+    "config",
+    "prettier",
+    "stylelint"
   ],
   "author": "guo.xu <xuguo@outlook.it>",
   "homepage": "https://github.com/xus-code/configuration#readme",
@@ -17,7 +19,8 @@
     "./": "./lib/base.js",
     "./react": "./lib/react.js",
     "./vue3": "./lib/vue3.js",
-    "./prettier": "./lib/prettier.js"
+    "./prettier": "./lib/prettier.js",
+    "./stylelint": "./lib/stylelint.js"
   },
   "repository": {
     "type": "git",
@@ -43,7 +46,16 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-vue": "^7.7.0",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "prettier-plugin-style-order": "^0.2.2",
+    "stylelint": "^13.11.0",
+    "stylelint-config-css-modules": "^2.2.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-declaration-block-no-ignored-properties": "^2.3.0",
+    "stylelint-no-unsupported-browser-features": "^4.1.4",
+    "stylelint-order": "^4.1.0"
   },
   "peerDependencies": {
     "typescript": "^4.2.2"
